@@ -164,3 +164,33 @@ plt.xlabel('X-axis')
 plt.ylabel('Y-axis')
 plt.show()
 # Output: A 10x12 heatmap with annotated values
+
+
+### stochastic gradient descent
+import numpy as np
+
+np.random.seed(42)
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+# Add bias term (intercept) to X
+X_b = np.c_[np.ones((100, 1)), X]
+
+# SGD Implementation
+def stochastic_gradient_descent(X, y, learning_rate=0.01, n_epochs=1000):
+    m = len(y)
+    theta = np.random.randn(2, 1)  # Random initialization of parameters
+
+    for epoch in range(n_epochs):
+        for i in range(m):
+            random_index = np.random.randint(m)
+            xi = X[random_index:random_index+1]
+            yi = y[random_index:random_index+1]
+            gradients = 2 * xi.T.dot(xi.dot(theta) - yi)
+            theta -= learning_rate * gradients
+    return theta
+
+theta_sgd = stochastic_gradient_descent(X_b, y)
+print("Parameters from SGD:\n", theta_sgd)  # Output: Estimated parameters from SGD
+
+

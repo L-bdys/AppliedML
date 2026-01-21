@@ -1,0 +1,51 @@
+%% An Introduction to LaTeX Thesis Template of Wuhan University
+%%
+%% Created by WHUTUG
+
+%% type = doctor|master|bachelor|opening
+\documentclass[type=bachelor]{whu-thesis}
+\whusetup
+  {
+    info               =
+      {
+        title          = {江汉大学本科毕业论文},
+        %title*         = {An Introduction to LaTeX Thesis Template\\of Wuhan University},
+        student-number = {222227101208},
+        school         = {智能制造学院},
+        author         = {XieHao, 张三, 李四, $a^2+b^2=c^2$},
+        author*        = {Your Name},
+        subject        = {学科},
+        major          = {\textlira{机械设计制造及其自动化}},
+        advisor        = {何思宇, 教授},
+        direction      = {研究方向},
+        % date           = {2021/5},
+        keywords       = {关键词 1 , 关键词 2 , 关键词 3 , 关键词 4 , 一个非常非常，非常非常长——的关键词 5},
+        keywords*      = {key word 1 , key word 2 , 
+                          key word 3 , key word 4 , 
+                          {and a very very, very very long key word---the key word 5}},
+      },
+    style              =
+      {
+        graphics-path  = {{figures/}{data/}},
+        list-of-figures,
+        list-of-tables,
+      },
+    element            =
+      {
+        innovation     = {pages/innovation},
+        abstract       = {pages/abstract},
+        abstract*      = {pages/enabstract},
+        bibliography   = {ref/refs , ref/thu},
+        achievements   = {pages/achievements},
+        thanks         = {pages/thanks},
+        appendix       = {pages/appendix}
+      }
+  }
+
+\begin{document}
+%%----------- 主体部分 ----------- %%
+\include{pages/chapter1}
+\include{pages/chapter2}
+\include{pages/chapter3}
+\include{pages/chapter4}
+\end{document}
